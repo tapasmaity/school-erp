@@ -1,31 +1,33 @@
 import { View, Text, StyleSheet, Image, StatusBar, TextInput, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import loginBGImage from '../assets/images/group1.png'
-import { cs, styleData, WIDTH } from '../css/cs';
+import loginBGImage from '../../assets/images/group1.png';
+import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
 import Icon from 'react-native-vector-icons/Feather';
-import { CustomBtn } from '../component/allButton/CustomBtn';
-// const myIcon = <Icon name="rocket" size={30} color="#900" />;
-export default function SignIn() {
+import { CustomBtn } from '../../component/allButton/CustomBtn';
+
+export default function SignIn({navigation}) {
   const [showPsw, setShowPsw] = useState(true)
 
   return (
     <ScrollView style={[cs.f1]}>
       <StatusBar
         barStyle='light-content'
-        backgroundColor={styleData.colorPrimary}
+        translucent={true}
+        backgroundColor={'transparent'}
 
       />
-      {/* <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-        <Text>
-          Sign in with Facebook
-        </Text>
-      </LinearGradient> */}
-      <View style={[styles.container, cs.p5]}>
+      <LinearGradient
+        colors={[styleData.colorPrimary300, styleData.colorPrimary]}
+        style={styles.linearBg}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+
+      >
         <Image source={loginBGImage} alt='logo' />
-        <Text style={[cs.font22, cs.colorWhite]}>Hi Student</Text>
+        <Text style={[cs.font22, cs.colorWhite, cs.textBold]}>Hi Student</Text>
         <Text style={[cs.colorWhite]}>Sign in to continue</Text>
-      </View>
+      </LinearGradient>
       <View style={[cs.boxRoundTop, { marginTop: -30 }]}>
         <View style={[cs.mt4]}>
           <Text style={[cs.font12]}>Mobile Number/Email</Text>
@@ -64,7 +66,7 @@ export default function SignIn() {
         </View>
         <View style={[cs.my3]}>
           <CustomBtn
-            // onPress={submitted}
+            onPress={()=>navigation.navigate('Home')}
             title='SIGN IN'
             bgColor={[styleData.colorPrimary, styleData.colorPrimary300]}
             color='white'
@@ -90,4 +92,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: styleData.colorGray
   },
+  linearBg:{
+    height: HEIGHT /2.3,
+    display:'flex',
+    justifyContent:'center',
+    paddingHorizontal:20
+  }
 })
