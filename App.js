@@ -1,20 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React, { useEffect } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import splashImg from './src/assets/images/vector.png';
 
 const Stack = createNativeStackNavigator();
-import { Image, StyleSheet } from 'react-native';
-import SignIn from './src/auth/SignIn';
+import { View, Image, StyleSheet, StatusBar } from 'react-native';
+import SignIn from './src/screens/auth/SignIn';
 import { styleData } from './src/css/cs';
+import LinearGradient from 'react-native-linear-gradient';
+import Home from './src/screens/admin-container/Home';
 
 
 const App = () => {
@@ -31,7 +25,7 @@ const App = () => {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      background: '#ffffff'
+      background: '#ffffff',
     },
   };
 
@@ -75,13 +69,23 @@ const App = () => {
   }
   return (
     <>
-      {hideSplash ? <Image style={styles.splashImage} source={splashImg} alt="logo" /> :
+      {hideSplash ?
+        <View>
+            <StatusBar translucent={true} backgroundColor={'transparent'} />
+          <Image style={styles.splashImage} source={splashImg} alt="logo" />
+        </View>
+        :
         <NavigationContainer theme={MyTheme}>
           <Stack.Navigator initialRouteName="SignIn">
             <Stack.Screen
               name="SignIn"
               component={SignIn}
-              options={({ navigation, route }) => scrBodystyle(false, 'OTP', navigation)}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
           </Stack.Navigator>
         </NavigationContainer>
