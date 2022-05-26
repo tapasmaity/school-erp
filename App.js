@@ -9,6 +9,7 @@ import SignIn from './src/screens/auth/SignIn';
 import { styleData } from './src/css/cs';
 import LinearGradient from 'react-native-linear-gradient';
 import Home from './src/screens/admin-container/Home';
+import Profile from './src/screens/admin-container/Profile';
 
 
 const App = () => {
@@ -30,18 +31,14 @@ const App = () => {
   };
 
   const scrBodystyle = (headerShow, title, navigation) => {
-    // const changeStyle = () => {
-    //   let bgHeader = styleData.colorPrimary
-    //   if (title === "Hot Retailers") {
-    //     return bgHeader = styleData.colorRed300
-    //   } else if (title === 'Warm Retailers') {
-    //     return bgHeader = styleData.colorYellow500
-    //   } else if (title === 'Cool Retailers') {
-    //     return bgHeader = styleData.colorAquaGreen300
-    //   } else {
-    //     return bgHeader
-    //   }
-    // }
+    const changeStyle = () => {
+      let bgHeader = styleData.colorPrimary
+      if (title === "My Profile") {
+        return bgHeader = styleData.colorAquaGreen300
+      } else {
+        return bgHeader
+      }
+    }
     const navScreen = {
       title: title,
       headerTitleAlign: 'left',
@@ -55,7 +52,7 @@ const App = () => {
       // ),
 
       headerStyle: {
-        backgroundColor: 'blue',
+        backgroundColor: changeStyle(),
       },
 
       headerTintColor: '#fff',
@@ -85,6 +82,11 @@ const App = () => {
             <Stack.Screen
               name="Home"
               component={Home}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="Profile"
+              component={Profile}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
           </Stack.Navigator>
