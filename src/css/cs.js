@@ -352,6 +352,9 @@ export const cs = StyleSheet.create({
     font12: {
         fontSize: 12,
     },
+    font15: {
+        fontSize: 15,
+    },
     font18: {
         fontSize: 18,
     },
@@ -408,9 +411,9 @@ export const cs = StyleSheet.create({
     displayStart: {
         display: 'flex',
         flexDirection: "row",
-        alignItems: "center",
         justifyContent: "flex-start"
     },
+
     displayEnd: {
         display: 'flex',
         flexDirection: "row",
@@ -429,9 +432,11 @@ export const cs = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-around"
     },
-
-    fWrap:{
-        flexWrap:'wrap'
+    itemCenter: {
+        alignItems: 'center'
+    },
+    fWrap: {
+        flexWrap: 'wrap'
     },
     // --------------------------Box Style --------!>
     boxContainer: {
@@ -443,7 +448,7 @@ export const cs = StyleSheet.create({
         borderTopStartRadius: 30,
         padding: 20,
     },
-    boxShadow1:{
+    boxShadow1: {
         elevation: 4,
         shadowColor: 'black',
         shadowOpacity: 0.25,

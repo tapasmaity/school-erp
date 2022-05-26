@@ -1,112 +1,84 @@
-import { View, Text, ScrollView, Image, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
 
 export default function MenuCard({ navigation }) {
 
-    const brandImg = [
+    const menuImg = [
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764056.jpg'}
+            menuImage: require('../../assets/images/card-img/quiz.png'),
+            title: 'Play Quiz'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764066.jpg'}
+            menuImage: require('../../assets/images/card-img/assignment.png'),
+            title: 'Assignment'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764076.jpg'}
+            menuImage: require('../../assets/images/card-img/holiday.png'),
+            title: 'School Holiday'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764088.jpg'}
+            menuImage: require('../../assets/images/card-img/calendra.png'),
+            title: 'Time Table'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764105.jpg'}
+            menuImage: require('../../assets/images/card-img/results.png'),
+            title: 'Result'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764114.jpg'}
+            menuImage: require('../../assets/images/card-img/date_sheet.png'),
+            title: 'Date Sheet'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764123.jpg'}
+            menuImage: require('../../assets/images/card-img/doubts.png'),
+            title: 'Ask Doubts'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764133.jpg'}
+            menuImage: require('../../assets/images/card-img/gallery.png'),
+            title: 'School Gallery'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764144.jpg'}
+            menuImage: require('../../assets/images/card-img/leave.png'),
+            title: 'Leave Application'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764154.jpg'}
+            menuImage: require('../../assets/images/card-img/password.png'),
+            title: 'Change Password'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764163.jpg'}
+            menuImage: require('../../assets/images/card-img/event.png'),
+            title: 'Events'
         },
         {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764173.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764192.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764183.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764202.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764210.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764218.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764227.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764235.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764363.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764255.jpg'}
-        },
-        {
-            brandImage: {uri:'https://thekidcity.com//uploads/1649764374.jpg'}
+            menuImage: require('../../assets/images/card-img/logout.png'),
+            title: 'Logout'
         },
     ]
-    
+
     return (
-        <ScrollView>
-            <View style={[cs.boxContainer]}>
-                <View style={[cs.displayBetween, cs.fWrap]}>
-                    {brandImg.map((item, index) => {
-                        return (
-                            <View key={index} style={[styles.brandContainer, cs.boxShadow1]}>
-                                <Image style={[styles.brandImg]} resizeMode='cover' source={item.brandImage} />
-                            </View>
-                        );
-                    })}
-                </View>
-            </View>
-        </ScrollView>
+        <View style={[cs.displayBetween, cs.fWrap]}>
+            {menuImg.map((item, index) => {
+                return (
+                    <View key={index} style={[styles.brandContainer, cs.boxShadow1]}>
+                        <Image style={[]} resizeMode='cover' source={item.menuImage} />
+                        <Text style={[cs.font15]}>{item.title}</Text>
+                    </View>
+                );
+            })}
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     brandContainer: {
         margin: 5,
-        width: WIDTH / 2 - 45,
+        width: WIDTH / 2 - 40,
         borderRadius: 10,
         height: HEIGHT / 5,
         borderTopWidth: 1,
         borderTopColor: '#efefef',
-        padding: 10,
+        padding: 15,
         backgroundColor: styleData.colorWhite,
-        justifyContent: 'center',
-        alignItems: 'center',
-
-    },
-    brandImg: {
-        width: '100%',
-        borderRadius: 10,
-        height: '100%',
-    },
+        justifyContent: 'space-around'
+    }
 })

@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, Image, StatusBar, TextInput, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, StatusBar, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import loginBGImage from '../../assets/images/star_pattern.png';
+import starPattenImg from '../../assets/images/star_pattern.png';
 import attenDanceImg from '../../assets/images/attendance.png';
 import feesDueImg from '../../assets/images/fees_due.png';
 import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
@@ -38,9 +38,11 @@ export default function Home({ navigation }) {
                             />
                         </View>
                     </View>
-                    <Image style={[styles.profileContainer]} resizeMode='cover' source={{ uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }} />
+                    <TouchableOpacity onPress={()=>navigation.navigate('Profile')}>
+                        <Image style={[styles.profileContainer]} resizeMode='cover' source={{ uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }} />
+                    </TouchableOpacity>
                 </View>
-                <Image source={loginBGImage} alt='logo' />
+                <Image source={starPattenImg} alt='logo' />
             </LinearGradient>
             <View style={[cs.boxRoundTop, { marginTop: -30 }]}>
                 <View style={styles.cartTopContainer}>
@@ -56,9 +58,9 @@ export default function Home({ navigation }) {
                     </View>
                 </View>
                 <ScrollView
-                        nestedScrollEnabled={true}
-                        showsVerticalScrollIndicator={false}
-                        style={{ height: HEIGHT /2 }}>
+                    nestedScrollEnabled={true}
+                    showsVerticalScrollIndicator={false}
+                    style={{ height: HEIGHT / 2 }}>
                     <MenuCard />
                 </ScrollView>
             </View>
