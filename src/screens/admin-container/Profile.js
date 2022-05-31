@@ -23,8 +23,8 @@ export default function Profile({ navigation }) {
                 end={{ x: 1, y: 1 }}
 
             >
-                <View style={[cs.displayBetween, cs.mt3]}>
-                    <TouchableOpacity onPress={() => navigation.goBack('')} style={[cs.displayStart]}>
+                <View style={[cs.displayBetween,cs.itemCenter, cs.mt3]}>
+                    <TouchableOpacity onPress={() => navigation.goBack('')} style={[cs.displayStart, cs.itemCenter]}>
                         <Icon name='chevron-left' size={30} color='white' />
                         <Text style={[cs.font20, cs.colorWhite, cs.textBold]}>My Profile</Text>
                     </TouchableOpacity>
@@ -41,10 +41,10 @@ export default function Profile({ navigation }) {
                 </View>
                 <Image style={[styles.starBg]} resizeMode="stretch" source={starPattenImg} alt='logo' />
             </LinearGradient>
-            <View style={[cs.boxRoundTop, { marginTop: -30 }]}>
-                <ScrollView 
-                nestedScrollEnabled={true}
-                showsVerticalScrollIndicator={false}
+            <View style={[cs.boxRoundTop, { marginTop: -30, flex: 1 }]}>
+                <ScrollView
+                    nestedScrollEnabled={true}
+                    showsVerticalScrollIndicator={false}
                 >
                     <View style={[styles.profileContainer]}>
                         <View style={[cs.displayStart]}>
@@ -64,7 +64,7 @@ export default function Profile({ navigation }) {
                             <View style={[cs.displayBetween, styles.inputStyle]}>
                                 <View style={[cs.displayStart]}>
                                     <TextInput
-                                        style={[cs.font15, { width: '100%', paddingLeft: 0, color:'#000000' }]}
+                                        style={[cs.font15, { width: '100%', paddingLeft: 0, color: '#000000' }]}
                                         placeholder="7234 7635 4677 3556"
                                         placeholderTextColor="#979797"
                                         // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -79,7 +79,7 @@ export default function Profile({ navigation }) {
                             <View style={[cs.displayBetween, styles.inputStyle]}>
                                 <View style={[cs.displayStart]}>
                                     <TextInput
-                                        style={[cs.font15, { width: '100%', paddingLeft: 0, color:'#000000' }]}
+                                        style={[cs.font15, { width: '100%', paddingLeft: 0, color: '#000000' }]}
                                         placeholder="2020-2021"
                                         placeholderTextColor="#979797"
                                         // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -96,7 +96,7 @@ export default function Profile({ navigation }) {
                             <View style={[cs.displayBetween, styles.inputStyle]}>
                                 <View style={[cs.displayStart]}>
                                     <TextInput
-                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                         placeholder="VI"
                                         placeholderTextColor="#979797"
                                         // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -114,7 +114,7 @@ export default function Profile({ navigation }) {
                             <View style={[cs.displayBetween, styles.inputStyle]}>
                                 <View style={[cs.displayStart]}>
                                     <TextInput
-                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                         placeholder="T00221"
                                         placeholderTextColor="#979797"
                                         // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -134,7 +134,7 @@ export default function Profile({ navigation }) {
                             <View style={[cs.displayBetween, styles.inputStyle]}>
                                 <View style={[cs.displayStart]}>
                                     <TextInput
-                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                         placeholder="01 Apr 2018"
                                         placeholderTextColor="#979797"
                                         // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -152,7 +152,7 @@ export default function Profile({ navigation }) {
                             <View style={[cs.displayBetween, styles.inputStyle]}>
                                 <View style={[cs.displayStart]}>
                                     <TextInput
-                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                        style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                         placeholder="22 July 1996"
                                         placeholderTextColor="#979797"
                                         // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -171,7 +171,7 @@ export default function Profile({ navigation }) {
                         <View style={[cs.displayBetween, styles.inputStyle]}>
                             <View style={[cs.displayStart]}>
                                 <TextInput
-                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                     placeholder="parentboth84@gmail.com"
                                     placeholderTextColor="#979797"
                                     // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -189,7 +189,7 @@ export default function Profile({ navigation }) {
                         <View style={[cs.displayBetween, styles.inputStyle]}>
                             <View style={[cs.displayStart]}>
                                 <TextInput
-                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                     placeholder="Monica Larson"
                                     placeholderTextColor="#979797"
                                     // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -207,7 +207,7 @@ export default function Profile({ navigation }) {
                         <View style={[cs.displayBetween, styles.inputStyle]}>
                             <View style={[cs.displayStart]}>
                                 <TextInput
-                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                     placeholder="Bernard Taylor"
                                     placeholderTextColor="#979797"
                                     // onChangeText={(txt) => evantHandler(txt, "psw")}
@@ -225,7 +225,7 @@ export default function Profile({ navigation }) {
                         <View style={[cs.displayBetween, styles.inputStyle]}>
                             <View style={[cs.displayStart]}>
                                 <TextInput
-                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color:'#000000' }]}
+                                    style={[cs.font15, { width: '80%', paddingLeft: 0, color: '#000000' }]}
                                     placeholder="Karol Bagh, Delhi"
                                     placeholderTextColor="#979797"
                                     // onChangeText={(txt) => evantHandler(txt, "psw")}
