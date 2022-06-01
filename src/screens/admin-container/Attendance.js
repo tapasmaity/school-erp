@@ -79,10 +79,11 @@ export default function Attendance({ navigation }) {
                     <TouchableOpacity onPress={() => navigation.goBack('')} style={[cs.displayStart]}>
                         <Icon name='chevron-left' size={30} color='white' />
                     </TouchableOpacity>
-                    <View style={[cs.displayCenter, cs.f1]}>
+                    <View style={[cs.displayCenter, cs.f1, {marginEnd: WIDTH / 14}]}>
                         <CustomTabBtn 
-                        onPress={handleChangeTab}
+                          onPress={handleChangeTab}
                           tabName={["ATTENDANCE", "HOLIDAY"]}
+                          bold={true}
                         />
                     </View>
                 </View>
