@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { cs, WIDTH } from '../../css/cs';
 
-export default function CustomTabBtn({ tabName, onPress }) {
+export default function CustomTabBtn({ tabName, onPress, borderColor, bgColor, activeColor, textColor, font, bold }) {
     const [tab, setTab] = useState('');
 
     useEffect(() => {
@@ -13,47 +13,48 @@ export default function CustomTabBtn({ tabName, onPress }) {
     * Tab
     * Change
     */
-    const tabHandar = (item) =>{
+    const tabHandar = (item) => {
         setTab(item);
-        onPress(item)
+        onPress && onPress(item)
     }
     return (
-        <View style={[styles.btnGroup]}>
+        <View style={[
+            styles.btnGroup,
+            borderColor && {
+                borderWidth: 1,
+                borderColor: borderColor,
+            },
+            { backgroundColor: bgColor ? bgColor : '#96B1E5', }
+        ]}>
             {tabName && tabName.map((item, i) => {
                 return (
                     <TouchableOpacity
                         key={i}
                         onPress={() => tabHandar(item)}
-                        style={[styles.btn, tab === item && { backgroundColor: 'white' }]}
+                        style={[styles.btn, tab === item && { backgroundColor: activeColor ? activeColor : 'white' }]}
                     >
-                        <Text style={[cs.font12, cs.textBold, tab === item ? { color: '#6688CA' } : { color: 'white' }]}>{item}</Text>
+                        <Text style={[
+                            tab === item ? { color: textColor ? textColor[0] : '#6688CA' } : { color: textColor ? textColor[1] : 'white' },
+                            {
+                                fontSize: font ? font : 12,
+                                fontWeight: bold && 'bold'
+                            }
+
+                            ]}>{item}</Text>
                     </TouchableOpacity>
                 );
             })}
-            {/* <TouchableOpacity
-                onPress={() => setTab('tabOne')}
-                style={[styles.btn, tab === "tabOne" && { backgroundColor: 'white' }]}
-            >
-                <Text style={[cs.font12, cs.textBold, tab === 'tabOne' ? { color: '#6688CA' } : { color: 'white' }]}>ATTENDANCE</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => setTab('tabTwo')}
-                style={[styles.btn, tab === "tabTwo" && { backgroundColor: 'white' }]}
-            >
-                <Text style={[cs.font12, cs.textBold, tab === 'tabTwo' ? { color: '#6688CA' } : { color: 'white' }]}>HOLIDAY</Text>
-            </TouchableOpacity> */}
         </View>
     )
 }
 const styles = StyleSheet.create({
     btnGroup: {
-        backgroundColor: '#96B1E5',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 30,
-        marginEnd: WIDTH / 15,
+        // marginEnd: WIDTH / 15,
 
     },
     btn: {

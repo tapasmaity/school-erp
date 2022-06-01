@@ -14,6 +14,8 @@ import Attendance from './src/screens/admin-container/Attendance';
 import FeesDue from './src/screens/admin-container/FeesDue';
 import PayOnline from './src/screens/admin-container/PayOnline';
 import Assignment from './src/screens/admin-container/Assignment';
+import ErrorPage from './src/screens/ErrorPage';
+import TimeTable from './src/screens/admin-container/TimeTable';
 
 
 const App = () => {
@@ -111,6 +113,16 @@ const App = () => {
             <Stack.Screen
               name="Assignment"
               component={Assignment}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="TimeTable"
+              component={TimeTable}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="ErrorPage"
+              component={ErrorPage}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
           </Stack.Navigator>

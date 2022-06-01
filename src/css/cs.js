@@ -10,6 +10,7 @@ export const HEIGHT = height;
 export const styleData = {
     colorPrimary: '#2855AE',
     colorPrimary300: '#7292CF',
+    colorPrimary200: '#E6EFFF',
     colorGray: '#BDBDBD',
     colorLightGray: '#efefef',
     colorSuccess: '#27AE60',
