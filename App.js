@@ -10,6 +10,10 @@ import { styleData } from './src/css/cs';
 import LinearGradient from 'react-native-linear-gradient';
 import Home from './src/screens/admin-container/Home';
 import Profile from './src/screens/admin-container/Profile';
+import Attendance from './src/screens/admin-container/Attendance';
+import FeesDue from './src/screens/admin-container/FeesDue';
+import PayOnline from './src/screens/admin-container/PayOnline';
+import Assignment from './src/screens/admin-container/Assignment';
 
 
 const App = () => {
@@ -73,7 +77,7 @@ const App = () => {
         </View>
         :
         <NavigationContainer theme={MyTheme}>
-          <Stack.Navigator initialRouteName="SignIn">
+          <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
               name="SignIn"
               component={SignIn}
@@ -87,6 +91,26 @@ const App = () => {
             <Stack.Screen
               name="Profile"
               component={Profile}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="Attendance"
+              component={Attendance}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="Fees"
+              component={FeesDue}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="PayOnline"
+              component={PayOnline}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="Assignment"
+              component={Assignment}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
           </Stack.Navigator>

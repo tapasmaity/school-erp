@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
 
@@ -59,10 +59,10 @@ export default function MenuCard({ navigation }) {
         <View style={[cs.displayBetween, cs.fWrap]}>
             {menuImg.map((item, index) => {
                 return (
-                    <View key={index} style={[styles.brandContainer, cs.boxShadow1]}>
+                    <TouchableOpacity key={index} style={[styles.brandContainer, cs.boxShadow1]}>
                         <Image style={[]} resizeMode='cover' source={item.menuImage} />
                         <Text style={[cs.font15]}>{item.title}</Text>
-                    </View>
+                    </TouchableOpacity>
                 );
             })}
         </View>

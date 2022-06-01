@@ -34,10 +34,11 @@ export default function SignIn({navigation}) {
           <View style={[cs.displayBetween, styles.inputStyle]}>
             <View style={[cs.displayStart]}>
               <TextInput
-                style={[cs.font18, { flex: 1, paddingLeft: 0 }]}
+                style={[cs.font18, { flex: 1, paddingLeft: 0, color:'#000000' }]}
                 placeholder="Syalfreelance@gmail.com"
                 // onChangeText={(txt) => evantHandler(txt, "psw")}
                 keyboardType="default"
+                placeholderTextColor="#979797"
               // defaultValue={password}
               />
             </View>
@@ -51,8 +52,9 @@ export default function SignIn({navigation}) {
           <View style={[cs.displayBetween, styles.inputStyle]}>
             <View style={[cs.displayStart]}>
               <TextInput
-                style={[cs.font18, { width: '90%', paddingLeft: 0 }]}
+                style={[cs.font18, { width: '90%', paddingLeft: 0, color:'#000000' }]}
                 placeholder="xxxxxxxx"
+                placeholderTextColor="#979797"
                 // onChangeText={(txt) => evantHandler(txt, "psw")}
                 keyboardType="default"
                 secureTextEntry={showPsw}

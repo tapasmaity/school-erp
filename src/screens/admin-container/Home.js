@@ -38,7 +38,7 @@ export default function Home({ navigation }) {
                             />
                         </View>
                     </View>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Profile')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                         <Image style={[styles.profileContainer]} resizeMode='cover' source={{ uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }} />
                     </TouchableOpacity>
                 </View>
@@ -46,16 +46,16 @@ export default function Home({ navigation }) {
             </LinearGradient>
             <View style={[cs.boxRoundTop, { marginTop: -30 }]}>
                 <View style={styles.cartTopContainer}>
-                    <View style={[styles.topCard]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Attendance')} style={[styles.topCard]} >
                         <Image source={attenDanceImg} alt="logo" />
                         <Text style={[cs.font30, cs.textBold, cs.mt1]}>80.39%</Text>
                         <Text>Attendance</Text>
-                    </View>
-                    <View style={[styles.topCard]}>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Fees')} style={[styles.topCard]}>
                         <Image source={feesDueImg} alt="logo" />
-                        <Text style={[cs.font30, cs.textBold, cs.mt1, cs.colo]}>&#8377; 6500</Text>
+                        <Text style={[cs.font30, cs.textBold, cs.mt1]}>&#8377; 6500</Text>
                         <Text>Fees Due</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <ScrollView
                     nestedScrollEnabled={true}
@@ -71,10 +71,10 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: styleData.colorPrimary
     },
-    inputStyle: {
-        borderBottomWidth: 1,
-        borderBottomColor: styleData.colorGray
-    },
+    // inputStyle: {
+    //     borderBottomWidth: 1,
+    //     borderBottomColor: styleData.colorGray
+    // },
     linearBg: {
         height: HEIGHT / 2.3,
         display: 'flex',
