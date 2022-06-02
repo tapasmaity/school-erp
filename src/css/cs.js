@@ -98,6 +98,9 @@ export const cs = StyleSheet.create({
         flex: 3,
     },
     // --------------------------Margin--------!>
+    m05: {
+        margin: 5,
+    },
     m1: {
         margin: 10,
     },
@@ -115,7 +118,10 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Margin Left--------!>
-    m1: {
+    ml05: {
+        marginLeft: 5,
+    },
+    ml1: {
         marginLeft: 10,
     },
     ml2: {
@@ -132,6 +138,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Margin Right--------!>
+    mr05: {
+        marginRight: 5,
+    },
     mr1: {
         marginRight: 10,
     },
@@ -149,6 +158,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Margin Top--------!>
+    mt05: {
+        marginTop: 5,
+    },
     mt1: {
         marginTop: 10,
     },
@@ -166,6 +178,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Margin Bottom--------!>
+    mb05: {
+        marginBottom: 5,
+    },
     mb1: {
         marginBottom: 10,
     },
@@ -223,6 +238,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Padding--------!>
+    p05: {
+        padding: 5,
+    },
     p1: {
         padding: 10,
     },
@@ -239,6 +257,9 @@ export const cs = StyleSheet.create({
         padding: 50,
     },
     // --------------------------Padding Left--------!>
+    pl05: {
+        paddingLeft: 5,
+    },
     pl1: {
         paddingLeft: 10,
     },
@@ -256,6 +277,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Padding Right--------!>
+    pr05: {
+        paddingRight: 5,
+    },
     pr1: {
         paddingRight: 10,
     },
@@ -273,6 +297,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Padding Top--------!>
+    pt05: {
+        paddingTop: 5,
+    },
     pt1: {
         paddingTop: 10,
     },
@@ -290,6 +317,9 @@ export const cs = StyleSheet.create({
     },
 
     // --------------------------Padding Bottom--------!>
+    pb05: {
+        paddingBottom: 5,
+    },
     pb1: {
         paddingBottom: 10,
     },

@@ -79,7 +79,7 @@ export default function MenuCard() {
             navigation.navigate('TimeTable')
         }
         if (type === 'Result') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('ResultScreen')
         }
         if (type === 'Date Sheet') {
             navigation.navigate('ErrorPage')

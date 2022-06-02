@@ -16,6 +16,7 @@ import PayOnline from './src/screens/admin-container/PayOnline';
 import Assignment from './src/screens/admin-container/Assignment';
 import ErrorPage from './src/screens/ErrorPage';
 import TimeTable from './src/screens/admin-container/TimeTable';
+import ResultScreen from './src/screens/admin-container/ResultScreen';
 
 
 const App = () => {
@@ -118,6 +119,11 @@ const App = () => {
             <Stack.Screen
               name="TimeTable"
               component={TimeTable}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="ResultScreen"
+              component={ResultScreen}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
             <Stack.Screen
