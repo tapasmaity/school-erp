@@ -18,6 +18,7 @@ import ErrorPage from './src/screens/ErrorPage';
 import TimeTable from './src/screens/admin-container/TimeTable';
 import ResultScreen from './src/screens/admin-container/ResultScreen';
 import DataSheet from './src/screens/admin-container/DataSheet';
+import AskDoubts from './src/screens/admin-container/AskDoubts';
 
 
 const App = () => {
@@ -130,6 +131,11 @@ const App = () => {
             <Stack.Screen
               name="DataSheet"
               component={DataSheet}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="AskDoubts"
+              component={AskDoubts}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
             <Stack.Screen
