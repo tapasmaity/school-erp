@@ -4,6 +4,7 @@ import bgResultImg from '../../assets/images/result.png';
 import LinearGradient from 'react-native-linear-gradient';
 import { cs, HEIGHT, styleData } from '../../css/cs';
 import { CustomBtn } from '../../component/allButton/CustomBtn';
+import FooterBgImg from '../../component/comon-component/FooterBgImg';
 
 export default function ResultScreen() {
     return (
@@ -80,7 +81,7 @@ export default function ResultScreen() {
                     bold={true}
                 />
             </View>
-            <Image style={[styles.footerImg]} source={require('../../assets/images/footer.png')} />
+            <FooterBgImg/>
         </View>
     )
 }
@@ -114,10 +115,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#E1E3E8',
         paddingHorizontal: 20,
         paddingVertical: 10
-    },
-    footerImg: {
-        position: 'absolute',
-        bottom: 0,
-        width: '100%'
-    },
+    }
 })

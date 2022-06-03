@@ -82,7 +82,7 @@ export default function MenuCard() {
             navigation.navigate('ResultScreen')
         }
         if (type === 'Date Sheet') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('DataSheet')
         }
         if (type === 'Ask Doubts') {
             navigation.navigate('ErrorPage')

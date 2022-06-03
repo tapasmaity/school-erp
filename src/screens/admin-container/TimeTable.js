@@ -5,6 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Entypo';
 import starPattenImg from '../../assets/images/star_pattern.png';
 import CustomTabBtn from '../../component/allButton/CustomTabBtn';
+import TopHeaderBgComponent from '../../component/comon-component/TopHeaderBgComponent';
 
 export default function TimeTable({ navigation }) {
 
@@ -52,28 +53,14 @@ export default function TimeTable({ navigation }) {
                 translucent={true}
                 backgroundColor={'transparent'}
             />
-            <LinearGradient
-                colors={[styleData.colorPrimary300, styleData.colorPrimary]}
-                style={[styles.linearBg]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-
-            >
-                <View style={[cs.displayStart, cs.mt3, cs.itemCenter]}>
-                    <TouchableOpacity onPress={() => navigation.goBack('')}>
-                        <Icon name='chevron-left' size={30} color='white' />
-                    </TouchableOpacity>
-                    <Text style={[cs.font20, cs.colorWhite, cs.textBold]}>Timetable</Text>
-                </View>
-                <Image style={[styles.starBg]} resizeMode="stretch" source={starPattenImg} alt='logo' />
-            </LinearGradient>
+            <TopHeaderBgComponent title='Timetable' />
             <View style={[cs.boxRoundTop, cs.f1, { marginTop: -30 }]}>
                 <ScrollView
                     showsVerticalScrollIndicator={false}
                     nestedScrollEnabled={true}
                     style={{ flex: 1 }}
                 >
-                    <View style={[cs.displayCenter,cs.mb2, cs.f1]}>
+                    <View style={[cs.displayCenter, cs.mb2, cs.f1]}>
                         <CustomTabBtn
                             // onPress={handleChangeTab}
                             borderColor='#E1E3E8'
@@ -91,7 +78,7 @@ export default function TimeTable({ navigation }) {
                                             <Text>{item.classTime}</Text>
                                         </View>
                                         {
-                                            item.teacherName && item.period ? <Text></Text> :<Image source={require('../../assets/images/lunch_break.png')} />
+                                            item.teacherName && item.period ? <Text></Text> : <Image source={require('../../assets/images/lunch_break.png')} />
                                         }
                                     </View>
                                     {
