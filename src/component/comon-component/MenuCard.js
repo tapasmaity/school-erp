@@ -85,7 +85,7 @@ export default function MenuCard() {
             navigation.navigate('DataSheet')
         }
         if (type === 'Ask Doubts') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('AskDoubts')
         }
         if (type === 'School Gallery') {
             navigation.navigate('ErrorPage')
