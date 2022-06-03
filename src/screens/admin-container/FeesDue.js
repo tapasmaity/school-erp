@@ -1,10 +1,8 @@
-import { View, Text, StatusBar, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React from 'react'
-import { cs, HEIGHT, styleData } from '../../css/cs'
-import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/Entypo';
+import { View, Text, StatusBar, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import React from 'react';
+import { cs } from '../../css/cs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import starPattenImg from '../../assets/images/star_pattern.png';
+import TopHeaderBgComponent from '../../component/comon-component/TopHeaderBgComponent';
 
 export default function FeesDue({ navigation }) {
     return (
@@ -15,21 +13,7 @@ export default function FeesDue({ navigation }) {
                 backgroundColor={'transparent'}
 
             />
-            <LinearGradient
-                colors={[styleData.colorPrimary300, styleData.colorPrimary]}
-                style={[styles.linearBg]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-
-            >
-                <View style={[cs.displayStart, cs.mt3, cs.itemCenter]}>
-                    <TouchableOpacity onPress={() => navigation.goBack('')}>
-                        <Icon name='chevron-left' size={30} color='white' />
-                    </TouchableOpacity>
-                    <Text style={[cs.font20, cs.colorWhite, cs.textBold]}>Fees Due</Text>
-                </View>
-                <Image style={[styles.starBg]} resizeMode="stretch" source={starPattenImg} alt='logo' />
-            </LinearGradient>
+            <TopHeaderBgComponent title='Fees Due'/>
             <View style={[cs.boxRoundTop, cs.f1, { marginTop: -30 }]}>
                 <ScrollView
                     showsVerticalScrollIndicator={false}
@@ -127,15 +111,7 @@ export default function FeesDue({ navigation }) {
     )
 }
 const styles = StyleSheet.create({
-    linearBg: {
-        height: HEIGHT / 4.5,
-        display: 'flex',
-        justifyContent: 'center',
-        paddingHorizontal: 20
-    },
-    starBg: {
-        height: 40,
-    },
+   
     feeListContainer: {
         borderWidth: 1,
         borderColor: '#E1E3E8',

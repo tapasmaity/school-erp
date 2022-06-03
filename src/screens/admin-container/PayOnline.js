@@ -1,11 +1,9 @@
 import { View, Text, StatusBar, StyleSheet, TouchableOpacity, Image, ScrollView, TextInput } from 'react-native';
 import React from 'react'
-import { cs, HEIGHT, styleData } from '../../css/cs';
-import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/Entypo';
+import { cs, styleData } from '../../css/cs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import starPattenImg from '../../assets/images/star_pattern.png';
 import { CustomBtn } from '../../component/allButton/CustomBtn';
+import TopHeaderBgComponent from '../../component/comon-component/TopHeaderBgComponent';
 
 export default function PayOnline({ navigation }) {
     return (
@@ -16,21 +14,7 @@ export default function PayOnline({ navigation }) {
                 backgroundColor={'transparent'}
 
             />
-            <LinearGradient
-                colors={[styleData.colorPrimary300, styleData.colorPrimary]}
-                style={[styles.linearBg]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-
-            >
-                <View style={[cs.displayStart, cs.mt3, cs.itemCenter]}>
-                    <TouchableOpacity onPress={() => navigation.goBack('')}>
-                        <Icon name='chevron-left' size={30} color='white' />
-                    </TouchableOpacity>
-                    <Text style={[cs.font20, cs.colorWhite, cs.textBold]}>Pay Online</Text>
-                </View>
-                <Image style={[styles.starBg]} resizeMode="stretch" source={starPattenImg} alt='logo' />
-            </LinearGradient>
+            <TopHeaderBgComponent title='Pay Online'/>
             <View style={[cs.boxRoundTop, cs.f1, { marginTop: -30 }]}>
                 <View style={[cs.mt2]}>
                     <Text style={[cs.font12]}>Date</Text>
@@ -106,15 +90,6 @@ export default function PayOnline({ navigation }) {
     )
 }
 const styles = StyleSheet.create({
-    linearBg: {
-        height: HEIGHT / 4.5,
-        display: 'flex',
-        justifyContent: 'center',
-        paddingHorizontal: 20
-    },
-    starBg: {
-        height: 40,
-    },
     inputStyle: {
         borderBottomWidth: 1,
         borderBottomColor: styleData.colorGray

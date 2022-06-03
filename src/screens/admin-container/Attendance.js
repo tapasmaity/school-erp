@@ -1,12 +1,12 @@
 import { View, Text, StatusBar, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import React, {useState, Fragment, useCallback, useMemo} from 'react';
 import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
-import Badges from '../../component/badge/badges';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Entypo';
 import starPattenImg from '../../assets/images/star_pattern.png';
 import {Calendar, CalendarProps} from 'react-native-calendars';
 import CustomTabBtn from '../../component/allButton/CustomTabBtn';
+import FooterBgImg from '../../component/comon-component/FooterBgImg';
 
 
 export default function Attendance({ navigation }) {
@@ -143,7 +143,7 @@ export default function Attendance({ navigation }) {
                 </View>
               }
             </View>
-            <Image style={[styles.footerImg]} source={require('../../assets/images/footer.png')} />
+            <FooterBgImg />
         </View>
     )
 }
@@ -156,11 +156,6 @@ const styles = StyleSheet.create({
     },
     starBg: {
         height: 40,
-    },
-    footerImg:{
-      position:'absolute',
-      bottom:0,
-      width:'100%'
     },
     atdCount:{
       borderWidth:1,
