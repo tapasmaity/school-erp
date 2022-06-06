@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, StatusBar, TextInput, ScrollView } from 'react-native'
 import React, { useState } from 'react';
 import TopHeaderBgComponent from '../../component/comon-component/TopHeaderBgComponent'
-import { cs, styleData } from '../../css/cs'
+import { cs, HEIGHT, styleData } from '../../css/cs'
 import FooterBgImg from '../../component/comon-component/FooterBgImg';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { Dropdown } from 'react-native-element-dropdown';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import { CustomBtn } from '../../component/allButton/CustomBtn';
 
 const teachers = [
     { label: 'Shubhanil Roy', value: '1' },
@@ -38,9 +39,9 @@ export default function AskDoubts() {
             <TopHeaderBgComponent title="Ask Doubt" />
             <View style={[cs.boxRoundTop, cs.f1, { marginTop: -30 }]}>
                 <ScrollView
-                nestedScrollEnabled={true}
-                showsVerticalScrollIndicator={false}
-                style={[cs.f1]}
+                    nestedScrollEnabled={true}
+                    showsVerticalScrollIndicator={false}
+                    style={[cs.f1 ,{marginBottom:HEIGHT /8}]}
                 >
                     <View style={[cs.mb2]}>
                         <Text>Select Teacher</Text>
@@ -119,6 +120,20 @@ export default function AskDoubts() {
                                 />
                             </View>
                         </View>
+                    </View>
+                    <View style={[cs.my3]}>
+                        <CustomBtn
+                            onPress={() => {}}
+                            title='SEND REQUEST'
+                            bgColor={[styleData.colorPrimary, styleData.colorPrimary300]}
+                            color='white'
+                            paddingY={16}
+                            paddingX={20}
+                            align="center"
+                            fontSize={18}
+                            bold={true}
+                        />
+
                     </View>
                 </ScrollView>
             </View>

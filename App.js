@@ -19,6 +19,8 @@ import TimeTable from './src/screens/admin-container/TimeTable';
 import ResultScreen from './src/screens/admin-container/ResultScreen';
 import DataSheet from './src/screens/admin-container/DataSheet';
 import AskDoubts from './src/screens/admin-container/AskDoubts';
+import ChangePassword from './src/screens/admin-container/ChangePassword';
+import SchoolImgGallery from './src/screens/admin-container/SchoolImgGallery';
 
 
 const App = () => {
@@ -136,6 +138,16 @@ const App = () => {
             <Stack.Screen
               name="AskDoubts"
               component={AskDoubts}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="ChangePassword"
+              component={ChangePassword}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="SchoolImgGallery"
+              component={SchoolImgGallery}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
             <Stack.Screen
