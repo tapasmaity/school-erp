@@ -46,12 +46,12 @@ export default function Home({ navigation }) {
             </LinearGradient>
             <View style={[cs.boxRoundTop, { marginTop: -30 }]}>
                 <View style={styles.cartTopContainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Attendance')} style={[styles.topCard]} >
+                    <TouchableOpacity onPress={() => navigation.navigate('Attendance')} style={[styles.topCard, cs.boxShadow1]} >
                         <Image source={attenDanceImg} alt="logo" />
                         <Text style={[cs.font30, cs.textBold, cs.mt1]}>80.39%</Text>
                         <Text>Attendance</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Fees')} style={[styles.topCard]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Fees')} style={[styles.topCard, cs.boxShadow1]}>
                         <Image source={feesDueImg} alt="logo" />
                         <Text style={[cs.font30, cs.textBold, cs.mt1]}>&#8377; 6500</Text>
                         <Text>Fees Due</Text>
@@ -89,10 +89,10 @@ const styles = StyleSheet.create({
 
     },
     topCard: {
-        borderWidth: 1,
-        borderColor: styleData.colorPrimary300,
+        // borderWidth: 1,
+        // borderColor: styleData.colorPrimary300,
         backgroundColor: 'white',
-        width: WIDTH / 2.5,
+        width: WIDTH / 2.4,
         paddingVertical: 15,
         paddingLeft: 15,
         borderRadius: 15,
