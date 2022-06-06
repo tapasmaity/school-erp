@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, StatusBar, ScrollView } from 'react-native'
 import React from 'react'
 import TopHeaderBgComponent from '../../component/comon-component/TopHeaderBgComponent'
-import { cs, styleData, WIDTH } from '../../css/cs';
+import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
 import Feather from 'react-native-vector-icons/Feather'
 import FooterBgImg from '../../component/comon-component/FooterBgImg';
 
@@ -18,7 +18,7 @@ export default function DataSheet() {
                 <ScrollView
                     showsVerticalScrollIndicator={false}
                     nestedScrollEnabled={true}
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, marginBottom:HEIGHT / 8 }}
                 >
 
                     <View style={[cs.displayBetween]}>
@@ -143,6 +143,54 @@ export default function DataSheet() {
                     <View style={[cs.displayBetween]}>
                         <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
                             <Text style={[cs.font22, cs.textBold]}>26</Text>
+                            <Text style={[cs.textBold]}>JAN</Text>
+                        </View>
+                        <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>
+                            <View>
+                                <Text style={[cs.textBold, cs.font15, cs.mb05]}>Sport</Text>
+                                <Text style={[cs.colorGray]}>Tuesday</Text>
+                            </View>
+                            <View style={[cs.displayStart]}>
+                                <Feather name='clock' size={18} color={styleData.colorGray} />
+                                <Text style={[cs.colorGray]}>09:00 AM</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={[cs.displayBetween]}>
+                        <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
+                            <Text style={[cs.font22, cs.textBold]}>26</Text>
+                            <Text style={[cs.textBold]}>JAN</Text>
+                        </View>
+                        <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>
+                            <View>
+                                <Text style={[cs.textBold, cs.font15, cs.mb05]}>Sport</Text>
+                                <Text style={[cs.colorGray]}>Tuesday</Text>
+                            </View>
+                            <View style={[cs.displayStart]}>
+                                <Feather name='clock' size={18} color={styleData.colorGray} />
+                                <Text style={[cs.colorGray]}>09:00 AM</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={[cs.displayBetween]}>
+                        <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
+                            <Text style={[cs.font22, cs.textBold]}>26</Text>
+                            <Text style={[cs.textBold]}>JAN</Text>
+                        </View>
+                        <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>
+                            <View>
+                                <Text style={[cs.textBold, cs.font15, cs.mb05]}>Sport</Text>
+                                <Text style={[cs.colorGray]}>Tuesday</Text>
+                            </View>
+                            <View style={[cs.displayStart]}>
+                                <Feather name='clock' size={18} color={styleData.colorGray} />
+                                <Text style={[cs.colorGray]}>09:00 AM</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={[cs.displayBetween]}>
+                        <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
+                            <Text style={[cs.font22, cs.textBold]}>36</Text>
                             <Text style={[cs.textBold]}>JAN</Text>
                         </View>
                         <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>

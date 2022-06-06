@@ -84,7 +84,7 @@ const App = () => {
         </View>
         :
         <NavigationContainer theme={MyTheme}>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="SignIn">
             <Stack.Screen
               name="SignIn"
               component={SignIn}
