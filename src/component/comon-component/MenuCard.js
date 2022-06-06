@@ -88,13 +88,13 @@ export default function MenuCard() {
             navigation.navigate('AskDoubts')
         }
         if (type === 'School Gallery') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('SchoolImgGallery')
         }
         if (type === 'Leave Application') {
             navigation.navigate('ErrorPage')
         }
         if (type === 'Change Password') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('ChangePassword')
         }
         if (type === 'Events') {
             navigation.navigate('ErrorPage')
