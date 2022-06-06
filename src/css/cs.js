@@ -24,6 +24,7 @@ export const styleData = {
     colorAquaBlue400: '#BF5AE0',
     colorAquaGreen300: '#56CCF2',
     colorAquaGreen200: '#e6efed',
+    colorAquaGreen100: '#F5F6FC',
     fontOpenSansB: 'open-sans-bold',
     fontOpenSansM: 'open-sans-medium',
     fontOpenSansR: 'open-sans-regular',

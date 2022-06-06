@@ -85,16 +85,16 @@ export default function MenuCard() {
             navigation.navigate('DataSheet')
         }
         if (type === 'Ask Doubts') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('AskDoubts')
         }
         if (type === 'School Gallery') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('SchoolImgGallery')
         }
         if (type === 'Leave Application') {
             navigation.navigate('ErrorPage')
         }
         if (type === 'Change Password') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('ChangePassword')
         }
         if (type === 'Events') {
             navigation.navigate('ErrorPage')
@@ -109,8 +109,8 @@ export default function MenuCard() {
         <View style={[cs.displayBetween, cs.fWrap]}>
             {menuImg.map((item, index) => {
                 return (
-                    <TouchableOpacity onPress={() => handleRouting(item.title)} key={index} style={[styles.brandContainer, cs.boxShadow1]}>
-                        <Image style={[]} resizeMode='cover' source={item.menuImage} />
+                    <TouchableOpacity onPress={() => handleRouting(item.title)} key={index} style={[styles.brandContainer]}>
+                        <Image resizeMode='cover' source={item.menuImage} />
                         <Text style={[cs.font15]}>{item.title}</Text>
                     </TouchableOpacity>
                 );
@@ -122,13 +122,11 @@ export default function MenuCard() {
 const styles = StyleSheet.create({
     brandContainer: {
         margin: 5,
-        width: WIDTH / 2 - 40,
-        borderRadius: 10,
+        width: WIDTH / 2.4,
+        borderRadius: 15,
         height: HEIGHT / 5,
-        borderTopWidth: 1,
-        borderTopColor: '#efefef',
+        backgroundColor:styleData.colorAquaGreen100,
         padding: 15,
-        backgroundColor: styleData.colorWhite,
         justifyContent: 'space-around'
     }
 })
