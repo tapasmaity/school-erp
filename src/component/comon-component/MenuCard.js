@@ -91,16 +91,16 @@ export default function MenuCard() {
             navigation.navigate('SchoolImgGallery')
         }
         if (type === 'Leave Application') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('LeaveAplication')
         }
         if (type === 'Change Password') {
             navigation.navigate('ChangePassword')
         }
         if (type === 'Events') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('Events')
         }
         if (type === 'Logout') {
-            navigation.navigate('ErrorPage')
+            navigation.navigate('SignIn')
         }
     }
 

@@ -12,6 +12,7 @@ export const styleData = {
     colorPrimary300: '#7292CF',
     colorPrimary200: '#E6EFFF',
     colorGray: '#BDBDBD',
+    colorTextGray: '#777777',
     colorLightGray: '#efefef',
     colorSuccess: '#27AE60',
     colorWarn: '#bd9218',
@@ -25,10 +26,12 @@ export const styleData = {
     colorAquaGreen300: '#56CCF2',
     colorAquaGreen200: '#e6efed',
     colorAquaGreen100: '#F5F6FC',
+    
     fontOpenSansB: 'open-sans-bold',
     fontOpenSansM: 'open-sans-medium',
     fontOpenSansR: 'open-sans-regular',
     fontOpenSansI: 'open-sans-italic',
+
 }
 
 export const cs = StyleSheet.create({
@@ -56,6 +59,9 @@ export const cs = StyleSheet.create({
     },
     colorGray: {
         color: styleData.colorGray
+    },
+    colorTextGray: {
+        color: styleData.colorTextGray
     },
     colorWhite: {
         color: styleData.colorWhite
@@ -422,7 +428,6 @@ export const cs = StyleSheet.create({
     underLine: {
         textDecorationLine: "underline",
     },
-    // -------------------------Bold Text---------------------!>
     textBold: {
         fontWeight: 'bold'
     },

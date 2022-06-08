@@ -156,54 +156,6 @@ export default function DataSheet() {
                             </View>
                         </View>
                     </View>
-                    <View style={[cs.displayBetween]}>
-                        <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
-                            <Text style={[cs.font22, cs.textBold]}>26</Text>
-                            <Text style={[cs.textBold]}>JAN</Text>
-                        </View>
-                        <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>
-                            <View>
-                                <Text style={[cs.textBold, cs.font15, cs.mb05]}>Sport</Text>
-                                <Text style={[cs.colorGray]}>Tuesday</Text>
-                            </View>
-                            <View style={[cs.displayStart]}>
-                                <Feather name='clock' size={18} color={styleData.colorGray} />
-                                <Text style={[cs.colorGray]}>09:00 AM</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={[cs.displayBetween]}>
-                        <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
-                            <Text style={[cs.font22, cs.textBold]}>26</Text>
-                            <Text style={[cs.textBold]}>JAN</Text>
-                        </View>
-                        <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>
-                            <View>
-                                <Text style={[cs.textBold, cs.font15, cs.mb05]}>Sport</Text>
-                                <Text style={[cs.colorGray]}>Tuesday</Text>
-                            </View>
-                            <View style={[cs.displayStart]}>
-                                <Feather name='clock' size={18} color={styleData.colorGray} />
-                                <Text style={[cs.colorGray]}>09:00 AM</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={[cs.displayBetween]}>
-                        <View style={[cs.displayColumnCenter, cs.pr2, { width: WIDTH / 6.7 }]}>
-                            <Text style={[cs.font22, cs.textBold]}>36</Text>
-                            <Text style={[cs.textBold]}>JAN</Text>
-                        </View>
-                        <View style={[cs.displayBetween, cs.f1, styles.cardSubMenu]}>
-                            <View>
-                                <Text style={[cs.textBold, cs.font15, cs.mb05]}>Sport</Text>
-                                <Text style={[cs.colorGray]}>Tuesday</Text>
-                            </View>
-                            <View style={[cs.displayStart]}>
-                                <Feather name='clock' size={18} color={styleData.colorGray} />
-                                <Text style={[cs.colorGray]}>09:00 AM</Text>
-                            </View>
-                        </View>
-                    </View>
 
                 </ScrollView>
             </View>
