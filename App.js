@@ -21,6 +21,9 @@ import DataSheet from './src/screens/admin-container/DataSheet';
 import AskDoubts from './src/screens/admin-container/AskDoubts';
 import ChangePassword from './src/screens/admin-container/ChangePassword';
 import SchoolImgGallery from './src/screens/admin-container/SchoolImgGallery';
+import EventsAndPrograms from './src/screens/admin-container/EventsAndPrograms';
+import FeedDetails from './src/screens/admin-container/FeedDetails';
+import LeaveAplication from './src/screens/admin-container/LeaveAplication';
 
 
 const App = () => {
@@ -148,6 +151,21 @@ const App = () => {
             <Stack.Screen
               name="SchoolImgGallery"
               component={SchoolImgGallery}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="Events"
+              component={EventsAndPrograms}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="FeedDetails"
+              component={FeedDetails}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="LeaveAplication"
+              component={LeaveAplication}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
             <Stack.Screen
