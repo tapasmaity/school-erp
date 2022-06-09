@@ -3,59 +3,8 @@ import React from 'react'
 import { cs, HEIGHT, styleData, WIDTH } from '../../css/cs';
 import { useNavigation } from '@react-navigation/native';
 
-// Menu Card Data---------------!>
-const menuImg = [
-    {
-        menuImage: require('../../assets/images/card-img/quiz.png'),
-        title: 'Play Quiz'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/assignment.png'),
-        title: 'Assignment'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/holiday.png'),
-        title: 'School Holiday'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/calendra.png'),
-        title: 'Time Table'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/results.png'),
-        title: 'Result'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/date_sheet.png'),
-        title: 'Date Sheet'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/doubts.png'),
-        title: 'Ask Doubts'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/gallery.png'),
-        title: 'School Gallery'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/leave.png'),
-        title: 'Leave Application'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/password.png'),
-        title: 'Change Password'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/event.png'),
-        title: 'Events'
-    },
-    {
-        menuImage: require('../../assets/images/card-img/logout.png'),
-        title: 'Logout'
-    },
-]
 
-export default function MenuCard() {
+export default function MenuCard({menuCardData}) {
 
     const navigation = useNavigation();
 
@@ -68,6 +17,9 @@ export default function MenuCard() {
     const handleRouting = (type) => {
         if (type === 'Play Quiz') {
             navigation.navigate('ErrorPage')
+        }
+        if (type === 'Fees Due') {
+            navigation.navigate('Fees')
         }
         if (type === 'Assignment') {
             navigation.navigate('Assignment')
@@ -99,6 +51,9 @@ export default function MenuCard() {
         if (type === 'Events') {
             navigation.navigate('Events')
         }
+        if (type === 'Settings') {
+            navigation.navigate('Settings')
+        }
         if (type === 'Logout') {
             navigation.navigate('SignIn')
         }
@@ -107,7 +62,7 @@ export default function MenuCard() {
     
     return (
         <View style={[cs.displayBetween, cs.fWrap]}>
-            {menuImg.map((item, index) => {
+            {menuCardData.map((item, index) => {
                 return (
                     <TouchableOpacity onPress={() => handleRouting(item.title)} key={index} style={[styles.brandContainer]}>
                         <Image resizeMode='cover' source={item.menuImage} />
