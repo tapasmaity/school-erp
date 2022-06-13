@@ -16,12 +16,12 @@ export default function TopHeaderBgComponent({ title}) {
                 end={{ x: 1, y: 1 }}
 
             >
-                <View style={[cs.displayStart, cs.mt3, cs.itemCenter]}>
-                    <TouchableOpacity onPress={() => navigation.goBack('')}>
+                <TouchableOpacity onPress={() => navigation.goBack('')} style={[cs.displayStart, cs.mt3, cs.itemCenter]}>
+                    <View>
                         <Icon name='chevron-left' size={30} color='white' />
-                    </TouchableOpacity>
+                    </View>
                     <Text style={[cs.font20, cs.colorWhite, cs.textBold]}>{title}</Text>
-                </View>
+                </TouchableOpacity>
                 <Image style={[styles.starBg]} resizeMode="stretch" source={starPattenImg} alt='logo' />
             </LinearGradient>
   )

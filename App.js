@@ -25,6 +25,7 @@ import EventsAndPrograms from './src/screens/admin-container/EventsAndPrograms';
 import FeedDetails from './src/screens/admin-container/FeedDetails';
 import LeaveAplication from './src/screens/admin-container/LeaveAplication';
 import Settings from './src/screens/admin-container/Settings';
+import AddLeaveAplication from './src/screens/admin-container/AddLeaveAplication';
 
 
 const App = () => {
@@ -88,7 +89,7 @@ const App = () => {
         </View>
         :
         <NavigationContainer theme={MyTheme}>
-          <Stack.Navigator initialRouteName="SignIn">
+          <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
               name="SignIn"
               component={SignIn}
@@ -167,6 +168,11 @@ const App = () => {
             <Stack.Screen
               name="LeaveAplication"
               component={LeaveAplication}
+              options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
+            />
+            <Stack.Screen
+              name="AddLeaveAplication"
+              component={AddLeaveAplication}
               options={({ navigation, route }) => scrBodystyle(false, '', navigation)}
             />
             <Stack.Screen
