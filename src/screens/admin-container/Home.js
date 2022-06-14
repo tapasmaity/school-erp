@@ -178,7 +178,7 @@ export default function Home({ navigation }) {
                         <Text style={[cs.font30, cs.textBold, cs.mt1]}>80.39%</Text>
                         <Text>Attendance</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('ErrorPage')} style={[styles.topCard, cs.boxShadow1]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('AllResult')} style={[styles.topCard, cs.boxShadow1]}>
                         {/* <Image source={feesDueImg} alt="logo" /> */}
 
                         <View style={[cs.displayCenter]}>
