@@ -1,4 +1,12 @@
 import { StyleSheet, Dimensions } from "react-native";
+
+/*
+* Bar
+* Chart color style
+*/
+export const randomColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7)
+
+
 const { width, height } = Dimensions.get("window");
 
 export const WIDTH = width;
@@ -26,7 +34,7 @@ export const styleData = {
     colorAquaGreen300: '#56CCF2',
     colorAquaGreen200: '#e6efed',
     colorAquaGreen100: '#F5F6FC',
-    
+
     fontOpenSansB: 'open-sans-bold',
     fontOpenSansM: 'open-sans-medium',
     fontOpenSansR: 'open-sans-regular',

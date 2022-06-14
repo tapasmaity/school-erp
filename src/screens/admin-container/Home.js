@@ -9,8 +9,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import { CustomBtn } from '../../component/allButton/CustomBtn';
 import Badges from '../../component/badge/badges';
 import MenuCard from '../../component/comon-component/MenuCard';
-import { PieChart } from 'react-native-svg-charts'
-import { StackedBarChart } from 'react-native-svg-charts';
+import { VictoryChart, VictoryBar, VictoryTheme, VictoryPie, VictoryContainer, VictoryLabel } from 'victory-native';
 
 
 // Menu Card Data---------------!>
@@ -66,65 +65,53 @@ const menuCardData = [
 ]
 export default function Home({ navigation }) {
     const [showPsw, setShowPsw] = useState(true);
+    /*
+    * Bar
+    * Chart color style
+    */
+    const randomColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7)
 
     /*
     * Bar
     * Chart
     */
-    const barData = [
+    const examData = [
         {
-            month: new Date(2015, 0, 1),
-            apples: 3840,
-            bananas: 1920,
-            cherries: 960,
-            dates: 400,
-            oranges: 400,
+            month: 1,
+            earnings: 545
         },
         {
-            month: new Date(2015, 1, 1),
-            apples: 1600,
-            bananas: 1440,
-            cherries: 960,
-            dates: 400,
+            month: 2,
+            earnings: 445
         },
         {
-            month: new Date(2015, 2, 1),
-            apples: 640,
-            bananas: 960,
-            cherries: 3640,
-            dates: 400,
+            month: 3,
+            earnings: 345
         },
         {
-            month: new Date(2015, 3, 1),
-            apples: 3320,
-            bananas: 480,
-            cherries: 640,
-            dates: 400,
+            month: 4,
+            earnings: 445
+        },
+        {
+            month: 5,
+            earnings: 600
+        },
+        {
+            month: 6,
+            earnings: 445
+        },
+        {
+            month: 7,
+            earnings: 525
         },
     ]
-
-    const colors = ['#7b4173', '#a55194', '#ce6dbd', '#de9ed6']
-    const keys = ['apples', 'bananas', 'cherries', 'dates']
 
 
     /*
     * Pie
     * Chart
     */
-    const data = [50, 40, 10]
 
-    const randomColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7)
-
-    const pieData = data
-        .filter((value) => value > 0)
-        .map((value, index) => ({
-            value,
-            svg: {
-                fill: randomColor(),
-                onPress: () => console.log('press', index),
-            },
-            key: `pie-${index}`,
-        }))
 
 
     return (
@@ -164,22 +151,58 @@ export default function Home({ navigation }) {
                         {/* <Image source={attenDanceImg} alt="logo" />
                         <Text style={[cs.font30, cs.textBold, cs.mt1]}>80.39%</Text>
                         <Text>Attendance</Text> */}
-                        <PieChart style={{ height: 100 }} data={pieData} />
-
+                        <View style={[cs.displayCenter]}>
+                            <VictoryPie
+                                // radius={({ datum }) => 50 + datum.y * 20}
+                                style={{ labels: { fill: "white", fontSize: 12 } }}
+                                height={HEIGHT / 5.2}
+                                colorScale={[randomColor(), randomColor(), randomColor()]}
+                                animate={{ duration: 2000 }}
+                                cornerRadius={({ datum }) => 7}
+                                innerRadius={12}
+                                containerComponent={<VictoryContainer responsive={false} />}
+                                data={[
+                                    { x: 1, y: 5, label: "AT" },
+                                    { x: 2, y: 4, label: "H" },
+                                    { x: 3, y: 7, label: "AB" }
+                                ]}
+                                startAngle={-180}
+                                endAngle={450}
+                                padAngle={2}
+                                // labels={({ datum }) => datum.label}
+                                labelRadius={({ innerRadius }) => innerRadius + 11 }
+                                labelComponent={<VictoryLabel angle={45} />}
+                                padding={{ top: 0, bottom: 10, left:20, right:20 }}
+                            />
+                        </View>
                         <Text style={[cs.font30, cs.textBold, cs.mt1]}>80.39%</Text>
                         <Text>Attendance</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('ErrorPage')} style={[styles.topCard, cs.boxShadow1]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('AllResult')} style={[styles.topCard, cs.boxShadow1]}>
                         {/* <Image source={feesDueImg} alt="logo" /> */}
-                        <StackedBarChart
-                            style={{ height: 100 }}
-                            keys={keys}
-                            colors={colors}
-                            data={barData}
-                            showGrid={false}
-                            // contentInset={{ top: 30, bottom: 30 }}
-                        />
-                        <Text style={[cs.font30, cs.textBold, cs.mt1]}>Last 4</Text>
+
+                        <View style={[cs.displayCenter]}>
+                            <VictoryBar
+                                style={{ data: { fill: randomColor() } }}
+                                barWidth={12}
+                                width={WIDTH / 2.9}
+                                height={HEIGHT / 5.2}
+                                alignment="middle"
+                                barRatio={0.8}
+                                cornerRadius={{ top: 4 }}
+                                animate={{
+                                    duration: 3000,
+                                    onLoad: {
+                                        duration: 2000,
+                                        after: (() => randomColor())
+                                    }
+                                }}
+                                data={examData} x="month" y="earnings"
+                                // padding={{ top: 0, bottom: 10, l }}
+                                padding={{ top: 0, bottom: 20, left:10, right: 10 }}
+                            />
+                        </View>
+                        <Text style={[cs.font30, cs.textBold, cs.mt1]}>Last 7</Text>
                         <Text>Exam Reacord</Text>
                     </TouchableOpacity>
                 </View>
@@ -187,7 +210,7 @@ export default function Home({ navigation }) {
                     nestedScrollEnabled={true}
                     showsVerticalScrollIndicator={false}
                     style={{ height: HEIGHT / 2 }}>
-                    <MenuCard menuCardData={menuCardData}/>
+                    <MenuCard menuCardData={menuCardData} />
                 </ScrollView>
             </View>
         </ScrollView>
